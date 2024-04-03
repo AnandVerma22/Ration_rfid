@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load static %}
+    {% include 'vhead.html' %}
+  </head>
+  <body>
+<!--header-->
+<header id="site-header" class="fixed-top">
+    {% include 'vheader.html' %}
+</header>
+<!-- //header -->
+
+<!-- main-banner -->
+{% include 'vbanner.html' %}
+<!-- /main-banner -->
+
+
+<!-- Start -->
+<section class="w3l-contact-7 py-5" id="contact">
+  <div class="contacts-9 py-lg-5 py-md-4">
+      <div class="container">
+          <div class="top-map">
+              <div class="row map-content-9">
+                  <div class="col-lg-8">
+                      <h3 class="title-big">Change Sub-Member Details</h3>
+                      <br/>
+                      <form method="post" role="form" class="text-right" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="text" value="{{myresult.0.2}}" name="m_name" id="w3lName" placeholder="Member Name*"  required="required"><br/><br/>
+                        
+                        <input type="text" value="{{myresult.0.3}}" name="m_contact" id="w3lName" placeholder="Contact no*" maxlength="10"  pattern="[0-9]{10}" title="Enter Valid Contact" required="required" readonly><br/><br/>
+                        
+                          
+                        <h6 style="text-align: left;margin: 10px;">Aadhar Card</h6>
+                        <input type="file" name="vfile1" id="w3lSender">
+                        <input type="hidden" value="{{myresult.0.4}}" name="old_img1"/> <br><br>
+                        <input type="text" value="{{myresult.0.6}}" name="s_relation" id="w3lName" placeholder="Relation *"  required="required"><br/><br/>
+                        <button type="submit" class="btn btn-primary btn-style mt-3">Change Details</button>
+                      </form>
+                     
+                  </div>
+                  <div class="col-lg-4 cont-details">
+                    <a href="/media/{{myresult.0.4}}" target="_blank"><img src="/media/{{myresult.0.4}}" alt="" class="img-fluid" style="width:100%" ></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- End -->
+
+
+
+<!-- footer 14 -->
+{% include 'vfooter.html' %}
+<!-- //footer 14 -->
+
+{% include 'vscript.html' %}
+
+</body>
+
+</html>

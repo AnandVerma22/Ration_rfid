@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    {% include 'head.html' %}
+
+</head>
+
+<body>
+    <div class="ch-container">
+        <div class="row">
+            
+        <div class="row">
+            <div class="col-md-12 center login-header">
+                <img alt="RDS Logo" src="{% static 'img/logo_main.jpg' %}" style=" height: 150px; width:150px;border-radius: 100px;border:3px black solid;margin-top:-5px;" class="hidden-xs"/>
+            </div>
+            <!--/span-->
+        </div><!--/row-->
+    
+        <div class="row" style="margin-top: 70px;">
+            <div class="well col-md-5 center login-box">
+                <div class="alert alert-info">
+                    Please login with your Username and Password.
+                </div>
+                <form class="form-horizontal" method="post">
+                    {% csrf_token %}
+                    <fieldset>
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user red"></i></span>
+                            <input type="text" class="form-control" placeholder="Username" name="username">
+                        </div>
+                        <div class="clearfix"></div><br>
+    
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock red"></i></span>
+                            <input type="password" class="form-control" placeholder="Password" name="password">
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <div class="clearfix"></div>
+    
+                        <p class="center col-md-5">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </p>
+                        {% if msg != "" %}
+                        <div class="alert alert-danger">
+                            {{msg}}
+                        </div>
+                        {% endif %}
+                    </fieldset>
+                </form>
+            </div>
+            <!--/span-->
+        </div><!--/row-->
+    </div><!--/fluid-row-->
+    
+    </div><!--/.fluid-container-->
+<!-- external javascript -->
+{% include 'script.html' %}
+</body>
+</html>

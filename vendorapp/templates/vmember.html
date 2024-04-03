@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load static %}
+    {% include 'vhead.html' %}
+  </head>
+  <body>
+<!--header-->
+<header id="site-header" class="fixed-top">
+    {% include 'vheader.html' %}
+</header>
+<!-- //header -->
+
+<!-- main-banner -->
+{% include 'vbanner.html' %}
+<!-- /main-banner -->
+
+
+<!-- Start -->
+<section class="w3l-contact-7 py-5" id="contact">
+  <div class="contacts-9 py-lg-5 py-md-4">
+      <div class="container">
+          <div class="top-map">
+              <div class="row map-content-9">
+                  <div class="col-lg-8">
+                      <h3 class="title-big">Add Member Details</h3>
+                      <br/>
+                      <form method="post" role="form" class="text-right" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="text" name="mname" id="w3lSender" placeholder="Name*" required="required" title="Enter Valid Name"><br><br>
+                        <input type="text" name="mcontact" id="w3lName" placeholder="Contact no*" maxlength="10"  pattern="[0-9]{10}" title="Enter Valid Contact" required="required"><br/>
+                        <textarea name="maddress" id="w3lMessage" placeholder="Address" required="required"></textarea><br><br>
+                        <h6 style="text-align: left;margin: 10px;">Aadhar Card</h6>
+                        <input type="file" name="maadharcard" id="w3lSender"><br><br>
+                        <h6 style="text-align: left;margin: 10px;">Income Certificate</h6>
+                        <input type="file" name="m_inc_c" id="w3lSender"><br><br>
+                        
+                        <button type="submit" class="btn btn-primary btn-style mt-3">Add Details</button>
+                      </form>
+                      {% if msg != "" %}
+                        <script LANGUAGE='JavaScript'>window.alert('{{msg}}');window.location.href='/Vmember';
+                       </script>
+                       {% endif %}
+                  </div>
+                  <div class="col-lg-4 cont-details">
+                    <br><br>
+                    <img src="{% static 'assets/images/Sign_up.png' %}" alt="" class="img-fluid" style="height: 70%;">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- End -->
+
+
+
+<!-- footer 14 -->
+{% include 'vfooter.html' %}
+<!-- //footer 14 -->
+
+{% include 'vscript.html' %}
+
+</body>
+
+</html>

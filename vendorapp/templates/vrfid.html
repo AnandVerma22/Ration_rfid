@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    {% include 'vhead.html' %}
+</head>
+
+<body>
+    <!--header-->
+    <header id="site-header" class="fixed-top">
+        {% include 'vheader.html' %}
+    </header>
+    <!-- //header -->
+
+    <!-- main-banner -->
+    {% include 'vbanner.html' %}
+    <!-- /main-banner -->
+
+
+    <!-- Start -->
+
+    <section class="w3l-blogblock py-5">
+        <div class="container pt-lg-4 pt-md-3">
+            <div class="item">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <a href="blog-single.html">
+                            <img class="card-img-bottom d-block radius-image-full"
+                                src="{% static 'assets/images/rfid.webp' %}" alt="Card image cap">
+                        </a>
+                    </div>
+                    <div class="col-lg-6 blog-details align-self mt-lg-0 mt-4">
+                        <a href="blog-single.html" class="blog-desc-big">Radio Frequency Identification (RFID)
+                        </a>
+                        <div class="entry-meta mb-3">
+                            <span class="posted-on"><span class="published"> October 08, 2022</span></span>
+                        </div>
+                        <p style="text-align: justify;">Radio Frequency Identification (RFID) refers to a wireless
+                            system comprised of two components: tags and readers. The reader is a device that has one or
+                            more antennas that emit radio waves and receive signals back from the RFID tag. Tags, which
+                            use radio waves to communicate their identity and other information to nearby readers, can
+                            be passive or active. Passive RFID tags are powered by the reader and do not have a battery.
+                            Active RFID tags are powered by batteries.
+
+                            RFID tags can store a range of information from one serial number to several pages of data.
+                            Readers can be mobile so that they can be carried by hand, or they can be mounted on a post
+                            or overhead. Reader systems can also be built into the architecture of a cabinet, room, or
+                            building.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item mt-5">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <a href="blog-single.html">
+                            <iframe width="560" height="420" src="https://www.youtube.com/embed/z6v67BgcVy4?start=2"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen style="border-radius:10px;"></iframe>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 blog-details align-self mt-lg-0 mt-4">
+                        <a href="blog-single.html" class="blog-desc-big"> How RFID Works ? 
+                        </a>
+                        <div class="entry-meta mb-3">
+                            <span class="posted-on"><span class="published"> October 08, 2022</span>
+                        </div>
+                        <p style="text-align: justify;">Every RFID system consists of three components: a scanning
+                            antenna, a transceiver and a transponder. When the scanning antenna and transceiver are
+                            combined, they are referred to as an RFID reader or interrogator. There are two types of
+                            RFID readers -- fixed readers and mobile readers. The RFID reader is a network-connected
+                            device that can be portable or permanently attached. It uses radio waves to transmit signals
+                            that activate the tag. Once activated, the tag sends a wave back to the antenna, where it is
+                            translated into data.</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End -->
+
+
+
+    <!-- footer 14 -->
+    {% include 'vfooter.html' %}
+    <!-- //footer 14 -->
+
+    {% include 'vscript.html' %}
+
+</body>
+
+</html>

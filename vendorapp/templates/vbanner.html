@@ -1,0 +1,51 @@
+{% load static %}
+
+<div class="inner-banner">
+  <section class="w3l-breadcrumb py-5">
+      <div class="container py-lg-5 py-md-3">
+         
+          {% if request.path == '/Vcontact' %}
+          <h2 class="title">Contact Us</h2>
+          {% elif request.path == '/Vabout' %}
+          <h2 class="title">About Us</h2>
+          {% elif request.path == '/Vrfid' %}
+          <h2 class="title">About RFID</h2>
+          {% elif request.path == '/Vsignin' %}
+          <h2 class="title">Sign In</h2>
+          {% elif request.path == '/Vcenter' %}
+          <h2 class="title">Ration Centers</h2>
+          {% elif request.path == '/Vcard_holder' %}
+          <h2 class="title">Member Details</h2>
+          {% elif request.path == '/Vmember_edit' %}
+          <h2 class="title">Edit Member Details</h2>
+          {% elif request.path == '/Vmember' %}
+          <h2 class="title">Add Member</h2>
+          {% elif request.path == '/Vprofile' %}
+          <h2 class="title">Profile</h2>
+          {% elif request.path == '/Vsubmember' %}
+          <h2 class="title">Sub-Member Details</h2>
+          {% elif request.path == '/Vsubmember_add' %}
+          <h2 class="title">Add Sub-Member</h2>
+          {% elif request.path == '/Vpending' %}
+          <h2 class="title">Pending Ration Details</h2>
+          {% elif request.path == '/Vgive' %}
+          <h2 class="title">Ration Card Holder Status</h2>
+          {% elif request.path == '/Vcollected' %}
+          <h2 class="title">Ration Collected Members</h2>
+          {% elif request.path == '/Vfinal' %}
+          <h2 class="title">Ration Collected Details</h2>
+          {% else %}
+          <h2 class="title">About Us</h2>
+          {% endif %}
+      </div>
+  </section>
+</div>
+<!-- banner bottom shape -->
+<div class="position-relative">
+  <div class="shape overflow-hidden">
+      <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+      </svg>
+  </div>
+</div>
+<!-- banner bottom shape -->

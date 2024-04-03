@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load static %}
+    {% include 'vhead.html' %}
+  </head>
+  <body>
+<!--header-->
+<header id="site-header" class="fixed-top">
+    {% include 'vheader.html' %}
+</header>
+<!-- //header -->
+
+<!-- main-banner -->
+{% include 'vbanner.html' %}
+<!-- /main-banner -->
+
+
+<!-- Start -->
+<section class="w3l-contact-7 py-5" id="contact">
+  <div class="contacts-9 py-lg-5 py-md-4">
+      <div class="container">
+          <div class="top-map">
+              <div class="row map-content-9">
+                  <div class="col-lg-8">
+                      <h3 class="title-big">Send us a Message</h3>
+                      <p class="mb-4 mt-lg-0 mt-2">Your email address will not be published. Required fields are marked *</p>
+                      <form method="post" role="form" class="text-right">
+                        {% csrf_token %}
+                        <input type="text" name="vname" id="w3lName" placeholder="Name*" pattern="[a-zA-Z, ]*" title="Enter Valid Name" required="required"><br/><br/>
+                          <div class="form-grid">
+                              <input type="email" name="vmail" id="w3lSender" placeholder="Email*" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" required="required" title="Enter Valid Email">
+                              <input type="text" name="vphone" id="w3lPhone" placeholder="Phone number*" maxlength="10"  pattern="[0-9]{10}" title="Enter Valid Contact No." required="required">
+                          </div>
+                          <textarea name="vmessage" id="w3lMessage" placeholder="Message" required="required"></textarea>
+                          <button type="submit" class="btn btn-primary btn-style mt-3">Send Message</button>
+                      </form>
+                  </div>
+                  <div class="col-lg-4 cont-details">
+                      <address>
+                          <h5 class="">Contact Address</h5>
+                          <p><span class="fa fa-map-marker"></span>SVIM Campus, Ayodhya Nagar, Kadi, Gujarat 382715 </p>
+                          <p> <a href="mailto:vsitr@ksv.ac.in"><span
+                                      class="fa fa-envelope"></span>vsitr@ksv.ac.in</a></p>
+                          <p><span class="fa fa-phone"></span><a href="tel:+91 999 861 2764"> +91 999 861 2764</a></p>
+                      </address>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<div class="map">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3664.7111269327665!2d72.32212571449364!3d23.289943912127605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c197b183afce5%3A0xa3256c769bd9e0f7!2sVSITR%20Vidush%20Somany%20Institute%20of%20Technology%20and%20Research!5e0!3m2!1sen!2sin!4v1664861467442!5m2!1sen!2sin"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<!-- End -->
+
+
+
+<!-- footer 14 -->
+{% include 'vfooter.html' %}
+<!-- //footer 14 -->
+
+{% include 'vscript.html' %}
+
+</body>
+
+</html>

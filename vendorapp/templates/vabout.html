@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    {% include 'vhead.html' %}
+</head>
+
+<body>
+    <!--header-->
+    <header id="site-header" class="fixed-top">
+        {% include 'vheader.html' %}
+    </header>
+    <!-- //header -->
+
+    <!-- main-banner -->
+    {% include 'vbanner.html' %}
+    <!-- /main-banner -->
+
+
+    <!-- Start -->
+    <section class="w3l-aboutblock1 py-5" id="about">
+        <div class="container py-lg-5 py-md-3">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h5 class="title-small">A little about Us</h5>
+                    <h3 class="title-big">Welcome to RDS</h3>
+                    <p class="mt-3">The Ration distribution with RFID is one of the largest government’s economic
+                        policies in India.Its main motto is to provide food grains (sugar, wheat, rice, oil , dal ,etc.)
+                        to the people at affordable rates.The network of the ration shops is spread all over in India to
+                        provide food security to the people.This distribution of ration is controlled and monitored by
+                        central government, along with the state government.</p>
+                    <p class="mt-3">Automatic Ration Dispensing System presented here is an advanced system useful for the efficient way of ration distribution. This project is designed to minimize the manual intervention in the process of ration distribution, so that more transparency & efficiency can be maintained.
+                    </p>
+                </div>
+                <div class="col-lg-6 mt-lg-0 mt-5">
+                    <img src="{% static 'assets/images/about.jpg' %}" alt="" class="radius-image img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="w3l-team-main" id="team">
+        <div class="team py-5">
+            <div class="container py-lg-5">
+                <div class="title-content text-center">
+                    <h3 class="title-big">OUR TEAM</h3>
+                </div>
+                <div class="team-row mt-md-3 mt-3">
+                    <div class="team-wrap">
+                        <div class="team-member text-center">
+                            <div class="team-img">
+                                <img src="{% static 'assets/images/anand.jpeg' %}" alt="" class="radius-image img-fluid"
+                                    style="width:300px; height:300px; border-radius:25px;">
+                            </div>
+                            <a href="#url" class="team-title">Anand Verma</a>
+                            <p>CE, VSITR</p>
+                        </div>
+                    </div>
+                    <!-- end team member -->
+
+                    <div class="team-wrap">
+                        <div class="team-member text-center">
+                            <div class="team-img">
+                                <img src="{% static 'assets/images/harshc.jpeg' %}" alt=""
+                                    class="radius-image img-fluid"
+                                    style="width:300px; height:300px; border-radius:25px;">
+                            </div>
+                            <a href="#url" class="team-title">Harsh Chavda</a>
+                            <p>CE, VSITR</p>
+                        </div>
+                    </div>
+                    <!-- end team member -->
+
+                    <div class="team-wrap">
+                        <div class="team-member last text-center">
+                            <div class="team-img">
+                                <img src="{% static 'assets/images/harsh.jpeg' %}" alt="" class="radius-image img-fluid"
+                                    style="width:300px; height:300px; border-radius:25px;">
+                            </div>
+                            <a href="#url" class="team-title">Harsh Parmar</a>
+                            <p>CE, VSITR</p>
+                        </div>
+                    </div>
+                    <!-- end team member -->
+
+
+
+                </div>
+            </div>
+    </section>
+    <!-- End -->
+
+
+
+    <!-- footer 14 -->
+    {% include 'vfooter.html' %}
+    <!-- //footer 14 -->
+
+    {% include 'vscript.html' %}
+
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    {% include 'head.html' %}
+
+</head>
+
+<body>
+    <!-- topbar starts -->
+    <div class="navbar navbar-default" role="navigation">
+    
+		{% include 'header.html' %}
+		
+    </div>
+    <!-- topbar ends -->
+<div class="ch-container">
+    <div class="row">
+        
+        <!-- left menu starts -->
+        
+        {% include 'leftbar.html' %}
+        <!-- left menu ends -->
+
+        
+
+        <div id="content" class="col-lg-10 col-sm-10">
+            <!-- content starts -->
+            <div>
+    <ul class="breadcrumb">
+        <li>
+            <a href="/adminapp/">Home</a>
+        </li>
+        <li>
+            <a href="#">Category</a>
+        </li>
+    </ul>
+</div>
+
+<!-- start-->
+<div class="row">
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2><i class="glyphicon glyphicon-edit"></i> Edit Category Details</h2>
+
+                <div class="box-icon">
+                    <a href="#" class="btn btn-setting btn-round btn-default"><i
+                            class="glyphicon glyphicon-cog"></i></a>
+                    <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                            class="glyphicon glyphicon-chevron-up"></i></a>
+                    <a href="#" class="btn btn-close btn-round btn-default"><i
+                            class="glyphicon glyphicon-remove"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+                <form role="form" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Name</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" value="{{record.0.1}}" placeholder="Enter the category name" name="cname">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Quantity</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" value="{{record.0.2}}" placeholder="Enter the quantity" name="cquantity">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Price</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" value="{{record.0.3}}" placeholder="Enter the price" name="cprice">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Status</label>
+                        <select class="form-control" name="cstatus">
+                            {% if record.0.4 == 'Active' %}
+                            <option value="Active" selected>Active</option>
+                            <option value="Deactive">Deactive</option>
+                            {% else %}
+                            <option value="Active">Active</option>
+                            <option value="Deactive" selected>Deactive</option>
+                            {% endif %}
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-default">Update</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <!--/span-->
+
+</div><!--/row-->
+
+  
+<!--End -->
+    <!-- content ends -->
+    </div><!--/#content.col-md-0-->
+</div><!--/fluid-row-->
+    <hr>
+    <footer class="row">
+		{% include 'footer.html' %}
+    </footer>
+
+</div><!--/.fluid-container-->
+
+<!-- external javascript -->
+
+{% include 'script.html' %}
+</body>
+</html>

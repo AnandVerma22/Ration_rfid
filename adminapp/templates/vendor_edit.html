@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    {% include 'head.html' %}
+
+</head>
+
+<body>
+    <!-- topbar starts -->
+    <div class="navbar navbar-default" role="navigation">
+    
+		{% include 'header.html' %}
+		
+    </div>
+    <!-- topbar ends -->
+<div class="ch-container">
+    <div class="row">
+        
+        <!-- left menu starts -->
+        
+        {% include 'leftbar.html' %}
+        <!-- left menu ends -->
+
+        
+
+        <div id="content" class="col-lg-10 col-sm-10">
+            <!-- content starts -->
+            <div>
+    <ul class="breadcrumb">
+        <li>
+            <a href="/adminapp/">Home</a>
+        </li>
+        <li>
+            <a href="#">Vendor Edit</a>
+        </li>
+    </ul>
+</div>
+
+<!-- start-->
+<div class="row">
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="" style="background-color: #414141; color: white;">
+                <h2><i class="glyphicon glyphicon-edit"></i> Edit Vendor Details</h2>
+
+                <div class="box-icon">
+                    <a href="#" class="btn btn-setting btn-round btn-default"><i
+                            class="glyphicon glyphicon-cog"></i></a>
+                    <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                            class="glyphicon glyphicon-chevron-up"></i></a>
+                    <a href="#" class="btn btn-close btn-round btn-default"><i
+                            class="glyphicon glyphicon-remove"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+                <form role="form" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Name</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter the vendor name" value="{{record.0.1}}" name="vname">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Contact</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Contact" value="{{record.0.2}}" name="vcontact">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Image</label>
+                        <br/>
+                        <img src ="/media/{{record.0.3}}" style="height:50px; width:50px"/>
+                        <br/>
+                        <input type="file" class="form-control" id="exampleInputEmail1" name="vimage">
+                        <input type="hidden" value="{{record.0.3}}" name="old_img"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Shop Name</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter shop name" value="{{record.0.4}}" name="vsname">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Enter password" value="{{record.0.5}}" name="vpassword">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Status</label>
+                        <select class="form-control" name="vstatus">
+                            {% if record.0.6 == 'Active' %}
+                            <option value="Active" selected>Active</option>
+                            <option value="Deactive">Deactive</option>
+                            {% else %}
+                            <option value="Active">Active</option>
+                            <option value="Deactive" selected>Deactive</option>
+                            {% endif %}
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <!--/span-->
+
+</div><!--/row-->
+<div class="row">
+    <div class="box col-md-12">
+    </div>
+    <!--/span-->
+
+    </div><!--/row-->
+
+    
+<!--End -->
+    <!-- content ends -->
+    </div><!--/#content.col-md-0-->
+</div><!--/fluid-row-->
+    <hr>
+    <footer class="row">
+		{% include 'footer.html' %}
+    </footer>
+
+</div><!--/.fluid-container-->
+
+<!-- external javascript -->
+
+{% include 'script.html' %}
+</body>
+</html>

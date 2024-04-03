@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    {% include 'head.html' %}
+
+</head>
+
+<body>
+    <!-- topbar starts -->
+    <div class="navbar navbar-default" role="navigation">
+    
+		{% include 'header.html' %}
+		
+    </div>
+    <!-- topbar ends -->
+<div class="ch-container">
+    <div class="row">
+        
+        <!-- left menu starts -->
+        
+        {% include 'leftbar.html' %}
+        <!-- left menu ends -->
+
+        
+
+        <div id="content" class="col-lg-10 col-sm-10">
+            <!-- content starts -->
+            <div>
+    <ul class="breadcrumb">
+        <li>
+            <a href="/adminapp/">Home</a>
+        </li>
+        <li>
+            <a href="#">Generate Ration</a>
+        </li>
+    </ul>
+</div>
+
+<!-- start-->
+<div class="row">
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="" style="background-color: #414141; color: white;">
+                <h2><i class="glyphicon glyphicon-edit"></i>  Generate Ration</h2>
+
+                <div class="box-icon">
+                    <a href="#" class="btn btn-setting btn-round btn-default"><i
+                            class="glyphicon glyphicon-cog"></i></a>
+                    <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                            class="glyphicon glyphicon-chevron-up"></i></a>
+                    <a href="#" class="btn btn-close btn-round btn-default"><i
+                            class="glyphicon glyphicon-remove"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+                <form role="form" method="post">
+                    {% csrf_token %}
+                    <div class="form-group col-md-3">
+                        <label for="exampleInputEmail1">Vendor</label>
+                        <select name="v_id" class="form-control">
+                            {% for typedata in vresult %}
+                            <option value="{{typedata.0}}">{{typedata.1}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-default" style="margin-top: 25px;">Generate</button>
+                </form>
+                {% if msg != "" %}
+                <script type="text/javascript">window.alert('{{msg}}');</script>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <!--/span-->
+
+</div><!--/row-->
+
+
+    
+<!--End -->
+    <!-- content ends -->
+    </div><!--/#content.col-md-0-->
+</div><!--/fluid-row-->
+    <hr>
+    <footer class="row">
+		{% include 'footer.html' %}
+    </footer>
+
+</div><!--/.fluid-container-->
+
+<!-- external javascript -->
+
+{% include 'script.html' %}
+</body>
+</html>

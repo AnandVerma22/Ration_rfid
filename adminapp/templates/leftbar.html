@@ -1,0 +1,45 @@
+{% load static %}
+<div class="col-sm-2 col-lg-2">
+    <div class="sidebar-nav">
+        <div class="nav-canvas">
+            <div class="nav-sm nav nav-stacked">
+
+            </div>
+            <ul class="nav nav-pills nav-stacked main-menu">
+                <li class="nav-header">Main</li>
+                <li><a class="ajax-link" href="/adminapp/"><i class="glyphicon glyphicon-home"></i><span> Dashboard</span></a>
+                </li>
+                <li class="accordion">
+                    <a href="#"><i class="glyphicon glyphicon-plus"></i><span> Ration </span></a>
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="/adminapp/Generate_ration">Generate Ration </a></li>
+                        <li><a href="/adminapp/Ration_view">View Ration </a></li>
+                    </ul>
+                </li>
+                <li><a class="ajax-link" href="/adminapp/Category"><i class="glyphicon glyphicon-eye-open"></i><span> Category</span></a>
+                </li>
+                <li><a class="ajax-link" href="/adminapp/Vendor"><i class="glyphicon glyphicon-list-alt"></i><span> Vendor</span></a>
+                </li>
+                <li><a class="ajax-link" href="/adminapp/Member"><i class="glyphicon glyphicon-user"></i><span> Member</span></a>
+                </li>
+                <li><a class="ajax-link" href="/adminapp/Submember"><i class="glyphicon glyphicon-list"></i><span> Sub-member</span></a>
+                </li>
+                <li><a class="ajax-link" href="/adminapp/Feedback"><i class="glyphicon glyphicon-envelope"></i><span> Feedback</span></a>
+                </li>
+                <li class="accordion">
+                    <a href="#"><i class="glyphicon glyphicon-plus"></i><span> Report </span></a>
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="/adminapp/User_ration">User-Ration</a></li>
+                        <li><a href="/adminapp/Vendor_ration">Vendor-Ration</a></li>
+                        <li><a href="/adminapp/Member_report">Member </a></li>
+                        <li><a href="/adminapp/Submember_report">Submember</a></li>
+                        <li><a href="/adminapp/Vendor_report">Vendor</a></li>
+                    </ul>
+                </li>
+                <li><a href="/adminapp/logout"><i class="glyphicon glyphicon-lock"></i><span> Logout</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--/span-->

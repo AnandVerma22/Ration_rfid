@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load static %}
+    {% include 'vhead.html' %}
+  </head>
+  <body>
+<!--header-->
+<header id="site-header" class="fixed-top">
+    {% include 'vheader.html' %}
+</header>
+<!-- //header -->
+
+<!-- main-banner -->
+{% include 'vbanner.html' %}
+<!-- /main-banner -->
+
+
+<!-- Start -->
+<section class="w3l-contact-7 py-5" id="contact">
+  <div class="contacts-9 py-lg-5 py-md-4">
+      <div class="container">
+          <div class="top-map">
+              <div class="row map-content-9">
+                  <div class="col-lg-8">
+                      <h3 class="title-big">Sign In</h3>
+                      <p class="mb-4 mt-lg-0 mt-2">Please login with your Contact and Password.</p>
+                      <form method="post" role="form" class="text-right">
+                        {% csrf_token %}
+                        <input type="text" name="vcontact" id="w3lName" placeholder="Contact no*" maxlength="10"  pattern="[0-9]{10}" title="Enter Valid Contact" required="required"><br/><br/>
+                        <input type="password" name="vpass" id="myInput" placeholder="Password*" required="required" title="Enter Valid Password"><br/><br/>  
+                        <div style="display: flex;">
+                          <input type="checkbox" onclick="myFunction()" style="margin-right: 17px; width: 2px !important;"><div style="margin-top: 12px;">Show Password</div><br/><br/>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-style mt-3">Sign In</button> 
+                        <script>
+                          function myFunction() {
+                            var x = document.getElementById("myInput");
+                            if (x.type === "password") {
+                              x.type = "text";
+                            } else {
+                              x.type = "password";
+                            }
+                          }
+                          </script>
+                       </form>
+                      {% if msg != "" %}
+                        <script LANGUAGE='JavaScript'>window.alert('{{msg}}');window.location.href='/Vsignin';
+                       </script>
+                       {% endif %}
+                  </div>
+                  <div class="col-lg-4 cont-details">
+                    <img src="{% static 'assets/images/signin.jpg' %}" alt="" class="img-fluid">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- End -->
+
+
+
+<!-- footer 14 -->
+{% include 'vfooter.html' %}
+<!-- //footer 14 -->
+
+{% include 'vscript.html' %}
+
+</body>
+
+</html>

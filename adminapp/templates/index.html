@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    {% include 'head.html' %}
+</head>
+
+<body>
+    <!-- topbar starts -->
+    <div class="navbar navbar-default" role="navigation">
+        {% include 'header.html' %}
+    </div>
+    <!-- topbar ends -->
+<div class="ch-container">
+    <div class="row">
+        
+        <!-- left menu starts -->
+            {% include 'leftbar.html' %}
+        <!-- left menu ends -->
+        <div id="content" class="col-lg-10 col-sm-10">
+            <!-- content starts -->
+            <div>
+    <ul class="breadcrumb">
+        <li>
+            <a href="#">Home</a>
+        </li>
+        <li>
+            <a href="#">Dashboard</a>
+        </li>
+    </ul>
+</div>
+
+<!-- start-->
+
+<div class=" row">
+
+    <div class="col-md-3 col-sm-3 col-xs-6">
+        <a data-toggle="tooltip" title="{{vrecord.0.0}} Vendors" class="well top-block aaa" href="/adminapp/Vendor">
+            <i class="glyphicon glyphicon-list-alt blue"></i>
+
+            <div>Total Vendors</div>
+            <div>{{vrecord.0.0}}</div>
+            <span class="notification blue">{{vrecord.0.0}}</span>
+        </a>
+    </div>
+
+    <div class="col-md-3 col-sm-3 col-xs-6">
+        <a data-toggle="tooltip" title="{{memberrecord.0.0}} Members" class="well top-block aaa" href="/adminapp/Member">
+            <i class="glyphicon glyphicon-user green"></i>
+
+            <div>Total Members</div>
+            <div>{{memberrecord.0.0}}</div>
+            <span class="notification green">{{memberrecord.0.0}}</span>
+        </a>
+    </div>
+
+    <div class="col-md-3 col-sm-3 col-xs-6">
+        <a data-toggle="tooltip" title="{{subrecord.0.0}} Sub-members" class="well top-block aaa" href="/adminapp/Submember">
+            <i class="glyphicon glyphicon-list yellow"></i>
+
+            <div>Total Sub-members</div>
+            <div>{{subrecord.0.0}}</div>
+            <span class="notification yellow">{{subrecord.0.0}}</span>
+        </a>
+    </div>
+
+    <div class="col-md-3 col-sm-3 col-xs-6">
+        <a data-toggle="tooltip" title="{{sfrecord.0.0}} Shown Feedbacks" class="well top-block aaa" href="/adminapp/Feedback">
+            <i class="glyphicon glyphicon-envelope red"></i>
+
+            <div>Shown Feedbacks</div>
+            <div>{{sfrecord.0.0}}</div>
+            <span class="notification red">{{sfrecord.0.0}}</span>
+        </a>
+    </div>
+
+    <div class="col-md-3 col-sm-3 col-xs-6">
+        <a data-toggle="tooltip" title="{{hfrecord.0.0}} Hidden Feedbacks" class="well top-block aaa" href="/adminapp/Feedback">
+            <i class="glyphicon glyphicon-envelope blue"></i>
+
+            <div>Hidden Feedbacks</div>
+            <div>{{hfrecord.0.0}}</div>
+            <span class="notification blue">{{hfrecord.0.0}}</span>
+        </a>
+    </div>
+
+    <div class="col-md-3 col-sm-3 col-xs-6">
+        <a data-toggle="tooltip" title="{{crecord.0.0}} Categories" class="well top-block aaa" href="/adminapp/Category">
+            <i class="glyphicon glyphicon-list-alt green"></i>
+
+            <div>Total Categories</div>
+            <div>{{crecord.0.0}}</div>
+            <span class="notification green">{{crecord.0.0}}</span>
+        </a>
+    </div>
+
+    <div class="col-md-3 col-sm-3 col-xs-6">
+        <a data-toggle="tooltip" title="{{curecord.0.0}} User Collected" class="well top-block aaa" href="/adminapp/Ration_view">
+            <i class="glyphicon glyphicon-list yellow"></i>
+
+            <div>Total Ration Collected User</div>
+            <div>{{curecord.0.0}}</div>
+            <span class="notification yellow">{{curecord.0.0}}</span>
+        </a>
+    </div>
+
+    <div class="col-md-3 col-sm-3 col-xs-6">
+        <a data-toggle="tooltip" title="{{nurecord.0.0}} User Not Collected" class="well top-block aaa" href="/adminapp/Ration_view">
+            <i class="glyphicon glyphicon-envelope red"></i>
+
+            <div>Total Ration Not Collected User</div>
+            <div>{{nurecord.0.0}}</div>
+            <span class="notification red">{{nurecord.0.0}}</span>
+        </a>
+    </div>
+</div>
+
+<!--End -->
+    <!-- content ends -->
+    </div><!--/#content.col-md-0-->
+</div><!--/fluid-row-->
+
+   <hr>
+
+
+    <footer class="row">
+        {% include 'footer.html' %}
+    </footer>
+
+</div><!--/.fluid-container-->
+
+<!-- external javascript -->
+
+{% include 'script.html' %}
+
+</body>
+</html>

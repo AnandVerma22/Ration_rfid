@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    {% load static %}
+    {% include 'head.html' %}
+</head>
+
+<body>
+    <!-- topbar starts -->
+    <div class="navbar navbar-default" role="navigation">
+        {% include 'header.html' %}
+        
+    </div>
+    <!-- topbar ends -->
+<div class="ch-container">
+    <div class="row">
+        
+        <!-- left menu starts -->
+        {% include 'leftbar.html' %} 
+        <!-- left menu ends -->
+
+
+        <div id="content" class="col-lg-10 col-sm-10">
+            <!-- content starts -->
+            <div>
+    <ul class="breadcrumb">
+        <li>
+            <a href="/adminapp/">Home</a>
+        </li>
+        <li>
+            <a href="#">Verify Member</a>
+        </li>
+    </ul>
+</div>
+
+<!-- start-->
+
+<div class="row">
+    <div class="box col-md-12">
+    <div class="box-inner">
+    <div class="box-header well" data-original-title="">
+        <h2><i class="glyphicon glyphicon-user"></i> View Member Details</h2>
+
+        <div class="box-icon">
+            <a href="#" class="btn btn-setting btn-round btn-default"><i class="glyphicon glyphicon-cog"></i></a>
+            <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                    class="glyphicon glyphicon-chevron-up"></i></a>
+            <a href="#" class="btn btn-close btn-round btn-default"><i class="glyphicon glyphicon-remove"></i></a>
+        </div>
+    </div>
+    <div class="box-content">
+    <form role="form" method="post" enctype="multipart/form-data">   
+        {% csrf_token %} 
+    <table class="table table-striped table-bordered bootstrap-datatable  responsive">
+    <thead>
+    <tr>
+        <th>Member</th> <td>{{record.0.2}}</td><!--row 0-->
+    </tr>
+    <tr>
+        <th>Vendor</th> <td>{{record.0.13}}</td><!--row 0-->
+    </tr>
+    <tr>
+        <th>Aadhar card</th> <td><a href="/media/{{record.0.5}}" target="_blank"><img src ="/media/{{record.0.5}}" style="height:50px; width:50px;"/></a></td><!--row 0-->
+    </tr>
+    <tr>
+        <th>Income Certificate</th><td><a href="/media/{{record.0.6}}" target="_blank"><img src ="/media/{{record.0.6}}" style="height:50px; width:50px;"/></a></td><!--row 0-->
+    </tr>
+    <tr>
+        <th>Status</th> <td>
+            <select class="form-control" name="m_status">
+            {% if record.0.9 == 'Active' %} 
+            <option value="Active" selected>Active</option>
+            <option value="Deactive">Deactive</option>
+            {% else %}
+            <option value="Active">Active</option>
+            <option value="Deactive" selected>Deactive</option>
+            {% endif %}
+            
+
+         </select>
+        </td><!--row 0-->
+    </tr>
+
+    <tr>
+        <th>RFID Card</th> <td> <input type="text" class="form-control" id="exampleInputEmail1" value="{{record.0.8}}" name="rfid_code" placeholder="Enter RFID No."></td><!--row 0-->
+    </tr>
+    
+      <tr>
+        <td colspan="2"><button type="submit" class="btn btn-primary">Submit</button></td>
+      </tr> 
+    </thead>
+
+    </table>
+    </form>
+    </div>
+    </div>
+    </div>
+    <!--/span-->
+
+    </div><!--/row-->
+
+    
+
+<!--End -->
+
+
+
+
+
+
+    <!-- content ends -->
+    </div><!--/#content.col-md-0-->
+</div><!--/fluid-row-->
+
+  
+    <hr>
+
+
+    <footer class="row">
+        {% include 'footer.html' %}
+    </footer>
+
+</div><!--/.fluid-container-->
+
+<!-- external javascript -->
+{% include 'script.html' %}
+
+</body>
+</html>

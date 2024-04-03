@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load static %}
+    {% include 'vhead.html' %}
+  </head>
+  <body>
+<!--header-->
+<header id="site-header" class="fixed-top">
+    {% include 'vheader.html' %}
+</header>
+<!-- //header -->
+
+<!-- main-banner -->
+{% include 'vbanner.html' %}
+<!-- /main-banner -->
+
+
+<!-- Start -->
+
+<div class="w3-services py-5">
+    <div class="container py-lg-4 py-md-3">
+        <div class="row w3-services-grids">
+            {% for row in myrecord %}
+            <div class="col-lg-4 col-md-6 causes-grid">
+                <div class="causes-grid-info">
+                    <a href="#cause" class="cause-title-wrap">
+                        <p class="title">{{row.1}} </p>
+                        <h4 class="cause-title">{{row.4}}
+                        </h4>
+                        <p class="counter-inherit">
+                            {{row.2}}
+                        </p>
+                    </a>
+                    <img src="/media/{{row.3}}"  style="height: 250px; width: 250px;" class="img-fuild radius-image-full" alt="">
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- End -->
+
+
+
+<!-- footer 14 -->
+{% include 'vfooter.html' %}
+<!-- //footer 14 -->
+
+{% include 'vscript.html' %}
+
+</body>
+
+</html>
